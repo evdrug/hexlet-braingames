@@ -1,19 +1,29 @@
 {
-    "name": "jougene/brain-games",
-    "bin": [ "bin/brain-games" ],
-    "type": "library",
-    "description": "Hexlet project",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Eugene Sinitsyn",
-            "email": "phollyolly@gmail.com"
-        }
-    ],
-    "require": {
-        "wp-cli/php-cli-tools": "^0.11.3"
-    },
-    "autoload": {
-        "files": ["src/Cli.php"]
+  "name": "jougene/brain-games",
+  "bin": [
+    "bin/brain-games"
+  ],
+  "type": "library",
+  "description": "Hexlet project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Eugene Sinitsyn",
+      "email": "phollyolly@gmail.com"
     }
+  ],
+  "scripts": {
+    "phpcs": "phpcs"
+  },
+  "autoload": {
+    "files": [
+      "src/Cli.php"
+    ]
+  },
+  "require": {
+    "wp-cli/php-cli-tools": "^0.11.3"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.0"
+  }
 }
