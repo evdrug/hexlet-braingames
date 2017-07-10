@@ -8,9 +8,6 @@
             "email": "phollyolly@gmail.com"
         }
     ],
-    "require": {
-        "jougene/brain-games": "dev-master"
-    },
     "minimum-stability": "dev",
     "bin": [ "bin/brain-games" ]
 }
