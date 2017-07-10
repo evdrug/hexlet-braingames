@@ -1,0 +1,13 @@
+{
+    "name": "jougene/brain-games",
+    "description": "Hexlet project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eugene Sinitsyn",
+            "email": "phollyolly@gmail.com"
+        }
+    ],
+    "require": {},
+    "bin": [ "bin/brain-games" ]
+}
