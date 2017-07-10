@@ -1,5 +1,7 @@
 {
     "name": "jougene/brain-games",
+    "bin": [ "bin/brain-games" ],
+    "type": "library",
     "description": "Hexlet project",
     "license": "MIT",
     "authors": [
@@ -9,5 +11,5 @@
         }
     ],
     "minimum-stability": "dev",
-    "bin": [ "bin/brain-games" ]
+    "require": {}
 }
