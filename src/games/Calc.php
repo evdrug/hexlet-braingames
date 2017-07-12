@@ -19,7 +19,7 @@ function run()
         $signs = ['+', '-', '*'];
         $sign = $signs[array_rand($signs)];
         $number1 = rand(1, 100);
-        $number2 = rand(1, 100);    
+        $number2 = rand(1, 100);
 
         $expression = getRandomExpression($sign, $number1, $number2);
         line('Question: ' . $expression);
@@ -39,7 +39,7 @@ function run()
 
 function getRightAnswer($sign, $number1, $number2)
 {
-     switch($sign) {
+    switch ($sign) {
         case '+':
             return $number1 + $number2;
             break;
@@ -48,14 +48,11 @@ function getRightAnswer($sign, $number1, $number2)
             break;
         case '*':
             return $number1 * $number2;
-            break;        
-     }
+            break;
+    }
 }
 
 function getRandomExpression($sign, $number1, $number2)
 {
-    return $number1 . ' ' . $sign . ' ' . $number2; 
-
+    return $number1 . ' ' . $sign . ' ' . $number2;
 }
-
-
