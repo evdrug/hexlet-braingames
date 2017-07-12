@@ -1,7 +1,8 @@
 {
   "name": "jougene/brain-games",
   "bin": [
-    "bin/brain-games"
+    "bin/brain-games",
+    "bin/brain-even"
   ],
   "type": "library",
   "description": "Hexlet project",
