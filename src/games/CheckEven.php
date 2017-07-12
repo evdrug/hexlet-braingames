@@ -16,40 +16,23 @@ function run()
     line("Hello, %s", $name);
 
     for ($i = 1; $i <= ANSWERS_COUNT; $i++) {
-        step($name);
+        $number = rand(1, 100);
+        line('Question: ' . $number);
+        $answer = \cli\prompt("Your answer is");
+        if ($answer == getRightAnswer($number)) {
+            line('Correct!');
+            line();
+        } else {
+            line("%s is wrong answer ;(. Correct answer was %s", $answer, getRightAnswer($number));
+            line("Let's try again, %s", $name);
+            exit();
+        }
     }
 
     line("Congratulations, %s", $name);
 }
 
-function checkAnswer($number, $answer)
-{
-    if ($number % 2 === 0 && $answer == "yes") {
-        return true;
-    } else {
-        if ($answer == "no") {
-            return true;
-        }
-    }
-    return false;
-}
-
 function getRightAnswer($number)
 {
     return $number % 2 == 0 ? "yes" : "no";
-}
-
-function step($name)
-{
-    $number = rand(1, 100);
-    line('Question: ' . $number);
-    $answer = \cli\prompt("Your answer is");
-    if (checkAnswer($number, $answer)) {
-        line('Correct!');
-        line();
-    } else {
-        line("%s is wrong answer ;(. Correct answer was %s", $answer, getRightAnswer($number));
-        line("Let's try again, %s", $name);
-        exit();
-    }
 }

@@ -2,6 +2,7 @@
   "name": "jougene/brain-games",
   "bin": [
     "bin/brain-games",
+    "bin/brain-calc",
     "bin/brain-even"
   ],
   "type": "library",
@@ -19,7 +20,8 @@
   "autoload": {
     "files": [
       "src/Cli.php",
-      "src/games/CheckEven.php"
+      "src/games/CheckEven.php",
+      "src/games/Calc.php"
     ]
   },
   "require": {
