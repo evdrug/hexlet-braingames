@@ -2,56 +2,41 @@
 
 namespace Braingames\Games\Calc;
 
-use function \cli\line;
-use function \Braingames\Cli\printHeading;
+use function \Braingames\Cli\printGreeting;
+use function \Braingames\Cli\play;
 
-const ANSWERS_COUNT = 3;
+const GREETING = 'What is the result of the expression?';
 
 function run()
 {
-    printHeading('What is the result of the expression?');
-
-    $name = \cli\prompt('May I have your name?');
-    line("Hello, %s", $name);
-
-    for ($i = 1; $i <= ANSWERS_COUNT; $i++) {
+    $question = function () {
         $signs = ['+', '-', '*'];
         $sign = $signs[array_rand($signs)];
         $number1 = rand(1, 100);
         $number2 = rand(1, 100);
 
-        $expression = getRandomExpression($sign, $number1, $number2);
-        line('Question: ' . $expression);
-        $answer = \cli\prompt("Your answer is");
-        if ($answer == getRightAnswer($sign, $number1, $number2)) {
-            line('Correct!');
-            line();
-        } else {
-            line("%s is wrong answer ;(. Correct answer was %s", $answer, getRightAnswer($sign, $number1, $number2));
-            line("Let's try again, %s", $name);
-            exit();
+        return "{$number1} {$sign} {$number2}";
+    };
+
+    $rightAnswer = function ($question) {
+        $parts = explode(' ', $question);
+        $number1 = $parts[0];
+        $sign = $parts[1];
+        $number2 = $parts[2];
+
+        switch ($sign) {
+            case '+':
+                return $number1 + $number2;
+                break;
+            case '-':
+                return $number1 - $number2;
+                break;
+            case '*':
+                return $number1 * $number2;
+                break;
         }
-    }
+    };
 
-    line("Congratulations, %s", $name);
-}
-
-function getRightAnswer($sign, $number1, $number2)
-{
-    switch ($sign) {
-        case '+':
-            return $number1 + $number2;
-            break;
-        case '-':
-            return $number1 - $number2;
-            break;
-        case '*':
-            return $number1 * $number2;
-            break;
-    }
-}
-
-function getRandomExpression($sign, $number1, $number2)
-{
-    return $number1 . ' ' . $sign . ' ' . $number2;
+    printGreeting(GREETING);
+    play($question, $rightAnswer);
 }
