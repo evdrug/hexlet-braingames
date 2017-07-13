@@ -19,10 +19,7 @@ function run()
     };
 
     $rightAnswer = function ($question) {
-        $parts = explode(' ', $question);
-        $number1 = $parts[0];
-        $sign = $parts[1];
-        $number2 = $parts[2];
+        list($number1, $sign, $number2) = explode(' ',$question);
 
         switch ($sign) {
             case '+':

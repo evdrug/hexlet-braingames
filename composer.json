@@ -3,7 +3,8 @@
   "bin": [
     "bin/brain-games",
     "bin/brain-calc",
-    "bin/brain-even"
+    "bin/brain-even",
+    "bin/brain-gcd"
   ],
   "type": "library",
   "description": "Hexlet project",
@@ -21,7 +22,8 @@
     "files": [
       "src/Cli.php",
       "src/games/CheckEven.php",
-      "src/games/Calc.php"
+      "src/games/Calc.php",
+      "src/games/Gcd.php"
     ]
   },
   "require": {
