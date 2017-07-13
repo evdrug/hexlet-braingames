@@ -3,17 +3,19 @@
 namespace Braingames\Games\CheckEven;
 
 use function \cli\line;
+use function \Braingames\Cli\printHeading;
+use function \Braingames\Cli\printSuccessMessage;
 
 const ANSWERS_COUNT = 3;
 
 function run()
 {
-    line('Welcome to the Brain Games!');
-    line('Answer "yes" if number even otherwise answer "no".');
-    line();
+    printHeading('Answer "yes" if number even otherwise answer "no".');
 
     $name = \cli\prompt('May I have your name?');
     line("Hello, %s", $name);
+
+    while()
 
     for ($i = 1; $i <= ANSWERS_COUNT; $i++) {
         $number = rand(1, 100);
@@ -29,10 +31,15 @@ function run()
         }
     }
 
-    line("Congratulations, %s", $name);
+    printSuccessMessage($name);
 }
 
 function getRightAnswer($number)
 {
-    return $number % 2 == 0 ? "yes" : "no";
+    isEven($number) ? "yes" : "no";
+}
+
+function isEven($number)
+{
+    return $number % 2 == 0;
 }
