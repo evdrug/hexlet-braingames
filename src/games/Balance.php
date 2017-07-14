@@ -24,7 +24,7 @@ function balanceNumber($number)
     $digits = str_split(strval($number));
     sort($digits);
 
-    if(isBalanced($digits)) {
+    if (isBalanced($digits)) {
         return implode($digits);
     }
 
