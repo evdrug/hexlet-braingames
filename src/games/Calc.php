@@ -17,7 +17,7 @@ function run()
         return "{$number1} {$sign} {$number2}";
     };
 
-    $rightAnswer = function ($question) {
+    $getRightAnswer = function ($question) {
         list($number1, $sign, $number2) = explode(' ', $question);
 
         switch ($sign) {
@@ -33,5 +33,5 @@ function run()
         }
     };
 
-    play(GREETING, $question, $rightAnswer);
+    play(GREETING, $question, $getRightAnswer);
 }

@@ -12,11 +12,11 @@ function run()
         return rand(1, 100);
     };
 
-    $rightAnswer = function ($number) {
+    $getRightAnswer = function ($number) {
          return isEven($number) ? "yes" : "no";
     };
 
-    play(GREETING, $question, $rightAnswer);
+    play(GREETING, $question, $getRightAnswer);
 }
 
 function isEven($number)

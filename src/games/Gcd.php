@@ -12,13 +12,13 @@ function run()
         return rand(1, 100) . ' ' . rand(1, 100);
     };
 
-    $rightAnswer = function ($question) {
+    $getRightAnswer = function ($question) {
         list($number1, $number2) = explode(' ', $question);
 
         return gcd($number1, $number2);
     };
 
-    play(GREETING, $question, $rightAnswer);
+    play(GREETING, $question, $getRightAnswer);
 }
 
 function gcd($number1, $number2)
