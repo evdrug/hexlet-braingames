@@ -2,7 +2,6 @@
 
 namespace Braingames\Games\Gcd;
 
-use function \Braingames\Cli\printGreeting;
 use function \Braingames\Cli\play;
 
 const GREETING = 'Find the greatest common divisor of given numbers.';
@@ -16,17 +15,18 @@ function run()
     $rightAnswer = function ($question) {
         list($number1, $number2) = explode(' ', $question);
 
-        $gcd = function($number1, $number2) use (&$gcd) {
-            $remainder = $number1 > $number2 ? $number1 % $number2 : $number2 % $number1;
-            if($remainder == 0) {
-                return $number2;
-            }
-            return $gcd($number2, $remainder);
-        };
-
-        return $gcd($number1, $number2);
+        return gcd($number1, $number2);
     };
 
-    printGreeting(GREETING);
-    play($question, $rightAnswer);
+    play(GREETING, $question, $rightAnswer);
+}
+
+function gcd($number1, $number2)
+{
+    $remainder = $number1 > $number2 ? $number1 % $number2 : $number2 % $number1;
+    if ($remainder == 0) {
+        return $number2;
+    }
+
+    return gcd($number2, $remainder);
 }

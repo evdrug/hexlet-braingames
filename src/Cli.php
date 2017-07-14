@@ -38,8 +38,9 @@ function printFailMessage($answer, $name, $number)
     line("Let's try again, %s", $name);
 }
 
-function play($getQuestionFunc, $getRightAnswerFunc)
+function play($greeting, $getQuestionFunc, $getRightAnswerFunc)
 {
+    printGreeting($greeting);
     $name = promptUser();
 
     $rightAnswers = 0;

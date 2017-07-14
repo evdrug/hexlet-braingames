@@ -2,7 +2,6 @@
 
 namespace Braingames\Games\Calc;
 
-use function \Braingames\Cli\printGreeting;
 use function \Braingames\Cli\play;
 
 const GREETING = 'What is the result of the expression?';
@@ -19,7 +18,7 @@ function run()
     };
 
     $rightAnswer = function ($question) {
-        list($number1, $sign, $number2) = explode(' ',$question);
+        list($number1, $sign, $number2) = explode(' ', $question);
 
         switch ($sign) {
             case '+':
@@ -34,6 +33,5 @@ function run()
         }
     };
 
-    printGreeting(GREETING);
-    play($question, $rightAnswer);
+    play(GREETING, $question, $rightAnswer);
 }
