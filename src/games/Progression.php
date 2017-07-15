@@ -49,7 +49,7 @@ function generateProgressionWithMissedNumber($first, $step, $missedNumberPos)
 {
     $progressionString = '';
     for ($i = 0; $i < PROGRESSION_LENGTH; $i++) {
-        $progressionString .= $i == $missedNumberPos ? '.. ' : $first + $i * $step . ' '; 
+        $progressionString .= $i == $missedNumberPos ? '.. ' : $first + $i * $step . ' ';
     }
 
     return $progressionString;
