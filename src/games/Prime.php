@@ -20,12 +20,12 @@ function run()
 
 function isPrime($number)
 {
-    if(isEven($number)) {
+    if (isEven($number)) {
         return false;
     }
 
-    for($i = 3; $i <= $number/2; $i++) {
-        if($number % $i == 0) {
+    for ($i = 3; $i <= $number/2; $i++) {
+        if ($number % $i == 0) {
             return false;
         }
     }

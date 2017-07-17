@@ -54,11 +54,10 @@ function avgOfDigits($digits)
 
 function isBalanced($digits)
 {
-    $counter = 0;
     foreach ($digits as $digit) {
         if (abs($digit - avgOfDigits($digits)) >= 1) {
-            $counter++;
+            return false;
         }
     }
-    return $counter > 0 ? false : true;
+    return true;
 }
