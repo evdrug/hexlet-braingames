@@ -6,7 +6,7 @@
 ---
 
 ## Installation
-composer global require jougene/brain-games
+`composer global require jougene/brain-games`
 
 ## Description
 Some mini console brain games.
@@ -22,12 +22,10 @@ Your challenge is to answer to all of them correctly.
 - brain-prime - specify if the number is prime or not
 
 ## Usage
-Firstly you need add ~/.composer/vendor/bin to your PATH
-$ bin/'game name'
-ex.
-$ bin/brain-prime
+Firstly you need add `~/.composer/vendor/bin` to your PATH
+
+`$ bin/'game name'`
+ex. `$ bin/brain-prime`
 
 ## Example
 [![asciicast](https://asciinema.org/a/129073.png)](https://asciinema.org/a/129073)
-
-
