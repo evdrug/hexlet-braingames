@@ -17,29 +17,9 @@ function run()
     };
 
     $getRightAnswer = function ($question) {
-        $numbers = explode(' ', $question);
+        $progression = explode(' ', $question);
 
-        $missedNumberPos = array_search('..', $numbers);
-
-        if ($missedNumberPos === 0) {
-            $step = $numbers[2] - $numbers[1];
-            return $numbers[1] - $step;
-        }
-
-        if ($missedNumberPos === 1) {
-            $step = $numbers[3] - $numbers[2];
-            return $numbers[2] - $step;
-        }
-
-        if ($missedNumberPos === PROGRESSION_LENGTH - 1) {
-            $step = $numbers[PROGRESSION_LENGTH - 2] - $numbers[PROGRESSION_LENGTH - 3];
-            return $numbers[PROGRESSION_LENGTH - 2] + $step;
-        }
-
-        $step = $numbers[1] - $numbers[0];
-        $first = $numbers[0];
-
-        return $first + $step * $missedNumberPos;
+        return findMissedNumber($progression);
     };
 
     play(GREETING, $question, $getRightAnswer);
@@ -53,4 +33,29 @@ function generateProgressionWithMissedNumber($first, $step, $missedNumberPos)
     }
 
     return $progressionString;
+}
+
+function findMissedNumber($progression)
+{
+    $missedNumberPos = array_search('..', $progression);
+
+    if ($missedNumberPos === 0) {
+        $step = $progression[2] - $progression[1];
+        return $progression[1] - $step;
+    }
+
+    if ($missedNumberPos === 1) {
+        $step = $progression[3] - $progression[2];
+        return $progression[2] - $step;
+    }
+
+    if ($missedNumberPos === PROGRESSION_LENGTH - 1) {
+        $step = $progression[PROGRESSION_LENGTH - 2] - $progression[PROGRESSION_LENGTH - 3];
+        return $progression[PROGRESSION_LENGTH - 2] + $step;
+    }
+
+    $step = $progression[1] - $progression[0];
+    $first = $progression[0];
+
+    return $first + $step * $missedNumberPos;
 }
